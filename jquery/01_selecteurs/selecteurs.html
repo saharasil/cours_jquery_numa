@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>les selecteurs Jquery</title>
+    <style>
+        .maclasse {
+            color: blueviolet;
+            text-decoration: underline;
+            background-color: cyan;
+        }
+    </style>
 </head>
 <body>
     <h1>Titre H1</h1>
@@ -19,13 +26,20 @@
     <nav class="select">Nav 1</nav>
 
 
-
-
+    <span>Span 1</span>
+    <span>span 2</span>
+    <span class="fakeClass">span 3</span>
+    <figure>
+        <img src="img/b.jpg" alt="petit chat blanc" style="width: 200px;">
+        <figcaption></figcaption>
+    </figure>
 
 
 
     <script src="../sources/jquery-3.4.1.js"></script>
     <script>
+        function strUcFirst(a){return (a+'').charAt(0).toUpperCase()+a.substr(1);}
+
         // console.log(document.getElementsByTagName('h1')); 
         // console.log(document.querySelector('h1').innerHTML);
         //la fonction query $() est l'équivalent d'un document.queryselectorAll()
@@ -61,7 +75,8 @@
         //texte après le contenu
         $('p').eq(1).append('<a href="#"> Après </a>');
         //texte avant le contenu
-        $('p').eq(2).prepend('Avant ');
+        $('p').eq(2).prepend('<span> Avant </span> ');
+        console.log($('p').eq(2).html())    ;
 
         //selectionner les div leur donner un contour rouge .
         $('div').css({
@@ -83,9 +98,63 @@
         console.log($('div, nav'));
         $('div, nav').prepend('- ');    
 
+        //Manipulation de Classes (addClass(), removeClass(), toggleClass(), hasClass()) :
+
+            //addClass() permet d'ajouter une classe à la selection
+
+            $('span').eq(2).addClass('maclasse');
+
+            //removeClass() retire une classe existante à un élément 
+            $('span').eq(3).removeClass('fakeClass');
+
+            //retirer la classe maclasse au span2
+            $('span').eq(2).removeClass('maclasse');
+
+        //Manipulation d'attributs (attr(), removeAttr())
+            // attr() aui etablit un nouvel attribut 
+            $('div').eq(1).attr("title", "Hello");
+            $('div').eq(1).attr('class' , 'maclasse');
+
+
+            //retirer les classes vides de span 2 et span 3  en même ligne
+            $('span:eq(2), span:eq(3)').removeAttr('class');
+        
+        // Parents enfants 
+             // en selectionnant le parent (figure) je cherche à toucher un enfant (img)
+             $('figure').find('img').attr("title", "petit chat");
+
+
+             /// exercice: le but sera de récupérer l'attribut alt de img dans une variable.
+             // Demander en jquery à ce que cette variable s'affiche dans le figcaptiion.  
+                    // j'affecte 
+            var maAlt = $('figure').find('img').attr('alt');
+                    // je vérifie que ma variable contient bien le alt
+            console.log(maAlt);
+                    // je selctionne ma lègende (figcaption) pour remplir la balise avec ma variable (le contenu du alt) 
+            $('figure').find('figcaption').html(strUcFirst(maAlt)).css({
+                                                            'color': 'wihte', 
+                                                            'background': 'pink', 
+                                                            'font-weight':'bold',
+                                                            
+                                                             });
+
+            // le tout peut aussi se résoudre en une seule ligne: 
+            // $('figcaption').html($('img').attr('alt'));
+
+            // en selectionnant un enfant, je vais essayer d'atteindre le parent.  .parent() va chercher le parent naturel; si je demande .parent().parent() il va chercher le parent du parent (ici le body)
+            $('img').parent().parent().css("border", "2px solid green");
 
 
 
+
+
+            // function strUcFirst(a){
+            //     return 
+            //     (a +'').charAt(0).toUpperCase()+a.substr(1);}
+
+            // strUcFirst('test');
+            //  renvoie : "Test"
+console.log(strUcFirst('test'));
 
     </script>
 </body>
