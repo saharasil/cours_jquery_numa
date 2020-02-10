@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>les selecteurs Jquery</title>
+</head>
+<body>
+    <h1>Titre H1</h1>
+
+    <p>paragraphe 1</p>
+    <p>paragraphe 2</p>
+    <p>paragraphe 3</p>
+    <p>paragraphe 4</p>
+
+    <div>Div 1</div>
+    <div class="select">Div 2</div>
+    <nav class="select">Nav 1</nav>
+
+
+
+
+
+
+
+    <script src="../sources/jquery-3.4.1.js"></script>
+    <script>
+        // console.log(document.getElementsByTagName('h1')); 
+        // console.log(document.querySelector('h1').innerHTML);
+        //la fonction query $() est l'équivalent d'un document.queryselectorAll()
+        /* console.log($('h1')[0].innerHTML); ici [0] l'indice en javascript -> en bas en jquery .eq(0)
+                                               et .innerHTML -> .html() */
+
+        // la methode eq( ) permet de selectionner en jquery un indice d'une collection d'objects
+        //la methode html() remplace innerHTML pour recuperer ou redefinir un contenu de balise.
+        console.log($('h1').eq(0).html());
+        //pour le redefinir en html (je peux rajouter même des balises en html et il les interprète correctment en tant que des balises)
+        $('h1').eq(0).html('<a href="#">Mon titre via Jquery</a>');
+
+        //redefinir OU RECUPERER le contenu texte
+        $('h1').eq(0).text('Mon nouveau titre ');
+        console.log($('p').eq(2).text());
+        // $('p').html('Pragraphe{$}');
+
+        var maVariable = $('p').eq(0).html();
+        console.log(maVariable);
+
+        // methode css() applique des changements css en remplacement de .style 
+        //appliquer un seul chnagement :
+        $('p').css("color" , "red");
+        //appliquer plusieurs changements
+        $('p').css({
+                    'color':'red', 
+                    'font-weight':'bold',
+                    'margin':'10px'
+                });
+
+        //plutot que remplacer le texte d'une balise, nous pouvons choisir de rajouter du txte. Ainsi nous allons devoir choisir de le rajouter avnat ou après :
+        // il faut noter que 'append' et 'prepend' interprètent aussi les balises ajouter avec le texte et il les prendre en compte : exp le lien dans après
+        //texte après le contenu
+        $('p').eq(1).append('<a href="#"> Après </a>');
+        //texte avant le contenu
+        $('p').eq(2).prepend('Avant ');
+
+        //selectionner les div leur donner un contour rouge .
+        $('div').css({
+                      'border' : '1px solid red', 
+                       'margin': '10px'
+                    });
+
+        //selectionne les élément qui ont la classe select pour leur appliquer un couleur du fon 'blue' et un texte 'white'
+        console.log($('.select'));
+        $('.select').css({
+                       'background-color':'blue',
+                       'color' : 'white',
+                       'margin-right' : '10px',
+                       'margin-left' : '10px'
+
+                    });
+
+        //selectioner les trois éléments pour  faire préceder leur contenu d'un tiret '- '
+        console.log($('div, nav'));
+        $('div, nav').prepend('- ');    
+
+
+
+
+
+    </script>
+</body>
+</html>
