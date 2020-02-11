@@ -38,6 +38,7 @@
 
     <script src="../sources/jquery-3.4.1.js"></script>
     <script>
+
         function strUcFirst(a){return (a+'').charAt(0).toUpperCase()+a.substr(1);}
 
         // console.log(document.getElementsByTagName('h1')); 
@@ -134,9 +135,9 @@
             $('figure').find('figcaption').html(strUcFirst(maAlt)).css({
                                                             'color': 'wihte', 
                                                             'background': 'pink', 
-                                                            'font-weight':'bold',
-                                                            
                                                              });
+            // $('figcaption').text().animate({'font-weight': 'bolder',
+            //                                 },100) ;                                              
 
             // le tout peut aussi se résoudre en une seule ligne: 
             // $('figcaption').html($('img').attr('alt'));
@@ -148,14 +149,10 @@
 
 
 
-            // function strUcFirst(a){
-            //     return 
-            //     (a +'').charAt(0).toUpperCase()+a.substr(1);}
-
-            // strUcFirst('test');
-            //  renvoie : "Test"
-console.log(strUcFirst('test'));
+            
 
     </script>
+    <!-- labalise <noscript> pour vérifier si le javascript a été activé ou non -->
+    <!-- <noscript>abscense dejavascript </noscript> -->
 </body>
 </html>
