@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>les evenements Jquery</title>
+    <style>
+       .maClasse {
+           background-color: bisque;
+           border: 1px solid gray;
+       }
+
+       p {
+            margin: 20px;
+       }
+        
+    </style>
+
+</head>
+<body>
+    <h1 style="margin : 0 ">Evénements</h1>
+    <main>
+        <article>
+            <p style="display: none;">Mon paragraphe</p>
+        </article>
+    </main>
+  
+
+    <button id="button1">Click</button>
+    <button id="button2">Double click</button>
+    <button id="button3">Bouton 3</button>
+    <button id="button4">ToggleClasse</button>
+    <button id="button5">Bouton 5</button>
+    <button id="button6">Bouton 6</button>
+
+    <script src="../sources/jquery-3.4.1.js"></script>
+    <script>
+        //$(document).ready(function(){} ou
+        $(function(){
+            //modification de h1
+            $('h1').append(' Javascript');
+            
+        // Mon première bouton 
+
+            $('#button1').click(function(){
+                // alert('cliqué');
+                //faire au clic le texte h1 change de couleur et se souligne
+                $('h1').css({
+                    'color': 'red',
+                    'text-decoration' : 'underline'
+                })
+            });
+
+        // Mon deuxième bouton 
+
+            // un double clic sur le bouton 2 engendre un changement de couleur du body (.dblclick()) 
+            $('#button2').dblclick(function(){
+                $(this).css("display","none");
+                $('body').css("background-color" , "#c4c1e0 ");
+                //le mot clef "this" se refere à la selection active "$('#button')"
+            });
+
+
+
+        // Mon troisième bouton  
+            $('#button3').click(function(){
+               $('p').toggle();
+            });
+
+           
+
+
+
+        // Mon quatrième bouton 
+            
+            $('#button4').click(function(){
+               $('h1').toggleClass('maClasse');
+            });
+
+
+
+        //  Mon cinquième bouton  
+        // $('#button5').mouseenter(
+            //      function(){$('main').addClass('maClasse');}
+            // );
+            // $('#button3').mouseleave(
+            //      function(){$('main').removeClass('maClasse');}
+            // );
+
+            // -----------> ici on peut renplacer les deux évenement mouseenter et mouseleaver avec : ('.hover ') 
+
+            $('#button5').hover(
+                function(){
+                    $('main').addClass('maClasse');
+                },
+                function(){
+                    $('main').removeClass('maClasse');
+                }
+            );
+           
+
+
+        // Mon sisième bouton 
+        function animation(){
+            $('h1').animate({margin :'50px' },3000);
+            };
+
+            $('#button6').click(function(){
+                $('h1').on(animation());
+                                           
+            });
+
+
+            //methode .on()
+                $('p').on("click", function(){
+                    $(this).append(' clic');
+                    
+                });
+
+                //mettr en place en selectionnant article un contour à main
+
+                $('article').parent().css("border", "solid 2px red");
+
+                //retirons les marges du paragraphe à partir de la selection de son parent : article
+                $('article').find('p').css("margin", "0");              
+        
+        });
+        
+    </script>
+</body>
+</html>
