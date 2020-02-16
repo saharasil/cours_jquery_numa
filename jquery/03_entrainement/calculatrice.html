@@ -8,14 +8,29 @@
               text-align: center;
           }
 
+         
+
+          .display1, .display2, .display3{
+              display: none;
+              border: 1px solid black;
+              background-color: #ede59a;
+              width: 50% ;
+              position: relative;
+              left: 50%;
+              top: 10%;
+              transform: translate(-50%,-50%);
+
+          }
+
         </style>
     </head>
     <body>
         <a href="#" id="afficher">Faire apparaître la calculatrice</a> <span>/</span> <a href="#" id="cacher">Faire disparaître la calculatrice</a> <span>/</span> <a href="#" id="toggle">Je toggle</a>
-       <div id="conteneur" style="background-color: gray; height: 200px; width: 80%; margin: 20px auto; text-align: center; padding: 50px;">
+       <div id="conteneur" style="background-color: gray; position:absolute; height: 200px; width: 100%; margin: 20px auto; text-align: center; padding: 50px;">
             
             <form action="#" method="get">
                 <input type="number" name="saisie1" id="saisie1">
+                
                 <select name="operateur" id="operateur">
                     <option>+</option>
                     <option>-</option>
@@ -26,6 +41,9 @@
                 <input type="submit" name="bouton" id="bouton" value="Calculez">
     
             </form>
+            <div class="display1">Saisir un chiffre</div>
+            <div class="display2">Selectionner un operateur : + , - , * , /</div>
+            <div class="display3">Saisir un chiffre</div>
        </div>
 
         
@@ -79,6 +97,22 @@
                 });
                 $('#toggle').click(function(){
                     $('#conteneur').slideToggle();
+                });
+
+                $('#saisie1').hover(
+                    function(){
+                    $('.display1').toggle()
+
+                });
+                $('#operateur').hover(
+                    function(){
+                    $('.display2').toggle()
+
+                });
+                $('#saisie2').hover(
+                    function(){
+                    $('.display3').toggle()
+
                 });
 
 
