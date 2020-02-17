@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <!-- le css de jquery ui  -->
+   <link rel="stylesheet" href="jquery-ui.css">
+    <title>Entrainement jquery ui</title>
+    <!-- le stype "perso"  -->
+    <style>
+        .blue {
+            background-color: lightblue;
+        }
+        .nouvelleClasse {font-size: 30px; color: #00d1ff;}
+        .animation { 
+            width: 500px; 
+            height: 80px; 
+            background-color: gray;
+            color: white;
+            text-align: center;
+            line-height: 80px;
+            }
+            .effets {
+                height: 100px;
+                width: 100px;
+                background-color: tomato;
+            }
+            .ui-widget-header {
+                background: #ffc97c;
+            }
+            
+            .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+                background: tomato;
+                border: 1px solid tomato;
+            }
+    </style>
+  </head>
+  <body>
+
+    
+  <main  class="container-fluid pt-4 m-4" >
+
+        <div class="row">
+
+            <div class="col-10" id="accordion">
+                <div >
+                    <h3>First</h3>
+                    <div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+                </div>
+                <div>
+                    <h3>Second</h3>
+                    <div>Phasellus mattis tincidunt nibh.</div>
+                </div>
+                <div>
+                    <h3>Third</h3>
+                    <div>Nam dui erat, auctor a, dignissim quis.</div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <h4 id="ajoutClasse">Ajout de classe Jquery-ui</h4>
+        <div class="row">
+            <div class="col-6 col-md-6 blue">
+                  <div class="animation">  
+                      voici le contenu de ma div à animer
+                    </div>
+            </div>
+            <div class="col-6 col-md-6 blue">
+                <div class="effets mb-2">test</div>
+                <button id="bout_effets"> Click pour l'efffet</button>
+            </div>
+
+        </div>
+        <h4>Tabs</h4>
+       
+            <div class="row">
+                <div class="col-10" id="tabs">
+                    <ul>
+                      <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                      <li><a href="#tabs-2">Proin dolor</a></li>
+                      <li><a href="#tabs-3">Aenean lacinia</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                      <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                    </div>
+                    <div id="tabs-2">
+                      <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+                    </div>
+                    <div id="tabs-3">
+                      <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                      <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+                    </div>
+                  </div>
+            </div>
+           <div class="row mt-5">
+                <div class="col-8" style= "border: 1px solid red; height: 100vh; ">
+                    <img id="image1" src="images/cheval_01.jpg" alt="cheval_1">
+                    <img id="image6" src="images/cheval_06.jpg" alt="cheval_6">
+                    <img id="image3" src="images/cheval_03.jpg" alt="cheval_3">
+                    <img id="image9" src="images/cheval_09.jpg" alt="cheval_9">
+                    <img id="image2" src="images/cheval_02.jpg" alt="cheval_2">
+                    <img id="image4" src="images/cheval_04.jpg" alt="cheval_4">
+                    <img id="image7" src="images/cheval_07.jpg" alt="cheval_7">
+                    <img id="image5" src="images/cheval_05.jpg" alt="cheval_5">
+                    <img id="image8" src="images/cheval_08.jpg" alt="cheval_8">
+    
+                </div>
+           </div>
+
+      
+        
+  </main>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- script jquery  -->
+    <script src="../sources/jquery-3.4.1.js"></script>
+    <!-- lien vers le script de jquery-ui-->
+    <script src="jquery-ui.js"></script>
+    <script>
+        $(function(){
+            var icons = {
+            header: "ui-icon-circle-triangle-e",
+            activeHeader: "ui-icon-circle-triangle-s"
+            };
+
+        $( "#accordion" ).accordion({
+                collapsible: true,
+                icons :icons,
+                header: "> div > h3"
+        
+        })
+        .sortable({
+            axis: "y",
+            handle: "h3",
+            stop: function( event, ui ) {
+            // IE doesn't register the blur when sorting
+            // so trigger focusout handlers to remove .ui-state-focus
+            ui.item.children( "h3" ).triggerHandler( "focusout" );
+
+            // Refresh accordion to handle new order
+            $( this ).accordion( "refresh" );
+            }
+        });
+
+
+        $('#ajoutClasse').click(function(){
+            $(this).toggleClass("nouvelleClasse", 2000)
+            
+
+        });
+
+        $('.animation').click(function(){
+            var hauteur = '300px';
+            $(this).animate({
+                width: hauteur,
+                height: hauteur,
+                color : " white",
+                lineHeight : hauteur,
+                backgroundColor : 'blue'
+
+            }, 2000);
+
+        });
+
+        //placer un toggle pour qu'un clic sur le bouton  entraine apparition et disparition du carré, cette disparition doit avoir lieu avec un effet "bounce"
+        $('#bout_effets').click(function(){
+            //effect() permet de placer un effet au moment d'un événement
+            $('.effets').effect('bounce');
+            //toggle() peut se voir  preciser un effet qu'il appliquera lors des apparitions /disparitions
+            $('.effets').toggle("explode",2000);
+        });
+
+        //mise en place de tabs
+        $('#tabs').tabs({
+            event: "mouseover"
+        });
+
+
+        // rendre les images draggable() 
+        $('#image1').draggable({snap: "#image2, #image4", snapmode:'outer' });
+        $('#image2').draggable({snap: "#image1, #image3, #image5", snapmode:'outer'});
+        $('#image3').draggable({snap: "#image2, #image6", snapmode : 'outer'});
+        $('#image4').draggable({snap : "#image1, #image5, #image7", snapmode:'outer'});
+        $('#image5').draggable({snap: "#image2, #image4, #image6, #image8", snapmode: 'outer'});
+        $('#image6').draggable({snap: "#image3, #image5, #image9",snapmode:'outer' });
+
+    // changer le curseur : mousedown bouton de souris cliqué, mouseup bouton de souris relacher 
+
+        $('img').mousedown(function(){
+            $(this).css("cursor","grabbing");
+        });
+        $('img').mouseup(function(){
+            $(this).css("cursor","grab");
+        });
+
+
+
+
+    });
+
+      
+      
+    </script>
+    
+  </body>
+</html>
