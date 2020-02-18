@@ -12,9 +12,7 @@
     <title>Entrainement jquery ui</title>
     <!-- le stype "perso"  -->
     <style>
-        .blue {
-            background-color: lightblue;
-        }
+         
         .nouvelleClasse {font-size: 30px; color: #00d1ff;}
         .animation { 
             width: 500px; 
@@ -48,100 +46,191 @@
                 height: 200px;
                 border: 2px solid black;
             }
+            #resizable {
+                height: 300px;
+                width: 300px;
+                border: 1px solid;       
+                background: rgba(240,47,23,1);
+                background: -moz-linear-gradient(left, rgba(240,47,23,1) 0%, rgba(240,47,23,1) 9%, rgba(248,80,50,1) 47%, rgba(246,41,12,1) 74%, rgba(231,56,39,1) 100%);
+                background: -webkit-gradient(left top, right top, color-stop(0%, rgba(240,47,23,1)), color-stop(9%, rgba(240,47,23,1)), color-stop(47%, rgba(248,80,50,1)), color-stop(74%, rgba(246,41,12,1)), color-stop(100%, rgba(231,56,39,1)));
+                background: -webkit-linear-gradient(left, rgba(240,47,23,1) 0%, rgba(240,47,23,1) 9%, rgba(248,80,50,1) 47%, rgba(246,41,12,1) 74%, rgba(231,56,39,1) 100%);
+                background: -o-linear-gradient(left, rgba(240,47,23,1) 0%, rgba(240,47,23,1) 9%, rgba(248,80,50,1) 47%, rgba(246,41,12,1) 74%, rgba(231,56,39,1) 100%);
+                background: -ms-linear-gradient(left, rgba(240,47,23,1) 0%, rgba(240,47,23,1) 9%, rgba(248,80,50,1) 47%, rgba(246,41,12,1) 74%, rgba(231,56,39,1) 100%);
+                background: linear-gradient(to right, rgba(240,47,23,1) 0%, rgba(240,47,23,1) 9%, rgba(248,80,50,1) 47%, rgba(246,41,12,1) 74%, rgba(231,56,39,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f02f17', endColorstr='#e73827', GradientType=1 );
+
+
+                -webkit-box-shadow: 4px -11px 18px 5px rgba(0,0,0,0.75);
+                -moz-box-shadow: 4px -11px 18px 5px rgba(0,0,0,0.75);
+                box-shadow: 4px -11px 18px 5px rgba(0,0,0,0.75);
+
+            }
+            #resizable h5 {
+                text-align: center;
+                padding: 10px;
+                margin: 0;
+
+            }
+            .monhelper { 
+                border: 1px dotted gray; 
+            }
+            /* SELECTABLE  */
+
+            /* class du parent (la liste : ol) */
+            .ui-selectable {
+                list-style: none;
+                padding: 0;
+                margin : 0 0 100px 0;
+
+            }
+
+            
+            /* classe de l'élément selectionnable par défaut  */
+            .ui-selectee {
+                background: gray;
+                color: white;
+                padding: 5px 10px;
+                border: 1px solid black;
+                width: 150px;
+                text-align: center;
+            }
+            /* classe de l'élément une fois cliqué  */
+            .ui-selected {
+                background: #222;
+                color: #fff;
+            }
+            /* classe de l'élément en train d'étre cliqué  */
+            .ui-selecting {
+                background: #bbb;
+                
+            }
+            .ui-unselecting {
+                background: rgba(240,47,23,1);
+            }
+
+
     </style>
   </head>
   <body>
 
     
-  <main  class="container-fluid pt-4 m-4" >
+  <main  class="container mx-auto pt-4 m-4" >
 
-      <div class="starter-template">
-            <div class="row">
-    
-                <div class="col-10" id="accordion">
-                    <div >
-                        <h3>First</h3>
-                        <div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <div>
-                        <h3>Second</h3>
-                        <div>Phasellus mattis tincidunt nibh.</div>
-                    </div>
-                    <div>
-                        <h3>Third</h3>
-                        <div>Nam dui erat, auctor a, dignissim quis.</div>
-                    </div>
-                </div>
-                
+
+    <div class="row">
+
+        <div class="col-10" id="accordion">
+            <div >
+                <h3>First</h3>
+                <div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
             </div>
-            
-            <h4 id="ajoutClasse">Ajout de classe Jquery-ui</h4>
-            <div class="row">
-                <div class="col-6 col-md-6 blue">
-                      <div class="animation">  
-                          voici le contenu de ma div à animer
-                        </div>
-                </div>
-                <div class="col-6 col-md-6 blue">
-                    <div class="effets mb-2">test</div>
-                    <button id="bout_effets"> Click pour l'efffet</button>
-                </div>
-    
+            <div>
+                <h3>Second</h3>
+                <div>Phasellus mattis tincidunt nibh.</div>
             </div>
-            <h4>Tabs</h4>
-           
-                <div class="row">
-                    <div class="col-10" id="tabs">
-                        <ul>
-                          <li><a href="#tabs-1">Nunc tincidunt</a></li>
-                          <li><a href="#tabs-2">Proin dolor</a></li>
-                          <li><a href="#tabs-3">Aenean lacinia</a></li>
-                        </ul>
-                        <div id="tabs-1">
-                          <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
-                        </div>
-                        <div id="tabs-2">
-                          <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-                        </div>
-                        <div id="tabs-3">
-                          <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-                          <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-                        </div>
-                      </div>
-                </div>
-               <div class="row mt-5">
-                    <div class="col-8" style= "border: 1px solid red; height: 80vh;">
-                        <img id="image1" src="images/cheval_01.jpg" alt="cheval_1">
-                        <img id="image6" src="images/cheval_06.jpg" alt="cheval_6">
-                        <img id="image3" src="images/cheval_03.jpg" alt="cheval_3">
-                        <img id="image9" src="images/cheval_09.jpg" alt="cheval_9">
-                        <img id="image2" src="images/cheval_02.jpg" alt="cheval_2">
-                        <img id="image4" src="images/cheval_04.jpg" alt="cheval_4">
-                        <img id="image7" src="images/cheval_07.jpg" alt="cheval_7">
-                        <img id="image5" src="images/cheval_05.jpg" alt="cheval_5">
-                        <img id="image8" src="images/cheval_08.jpg" alt="cheval_8">
+            <div>
+                <h3>Third</h3>
+                <div>Nam dui erat, auctor a, dignissim quis.</div>
+            </div>
+        </div>
         
-                    </div>
-               </div>
-               
-                <div class="d-flex flex-wrap justify-content-md-between" style="border: 1px solid red; height: 80vh;">
-                    <h4 >Droppable()</h4>
-                        <div class="w-100"></div>
-                        <div id="joueur" >
-                            <img id="pierre" src="images/pierre.jpg" alt="Pierre">
-                            <img id="ciseaux" src="images/ciseaux.jpg" alt="Ciseaux">
-                            <img id="feuille" src="images/feuille.jpg" alt="Feuille">
-
-                        </div>
-                        <div id="adversaire"  >
-                            <img id="img_adv" src="images/ciseaux.jpg" alt="Ciseaux">
-
-                        </div>
-
+    </div>
+    
+    <h4 id="ajoutClasse">Ajout de classe Jquery-ui</h4>
+    <div class="row">
+        <div class="col-6 col-md-12 ">
+                <div class="animation">  
+                    voici le contenu de ma div à animer
                 </div>
-             
+        </div>
+        <div class="col-6 col-md-12 mt-2 ">
+            <div class="effets mb-2">test</div>
+            <button id="bout_effets"> Click pour l'efffet</button>
+        </div>
 
-      </div>    
+    </div>
+    <h4>Tabs</h4>
+    
+    <div class="row">
+        <div class="col-10" id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                <li><a href="#tabs-2">Proin dolor</a></li>
+                <li><a href="#tabs-3">Aenean lacinia</a></li>
+            </ul>
+            <div id="tabs-1">
+                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+            </div>
+            <div id="tabs-2">
+                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+            </div>
+            <div id="tabs-3">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+            </div>
+            </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-8 col-md-12" style= "border: 1px solid red; height: 80vh;">
+            <img id="image1" src="images/cheval_01.jpg" alt="cheval_1">
+            <img id="image6" src="images/cheval_06.jpg" alt="cheval_6">
+            <img id="image3" src="images/cheval_03.jpg" alt="cheval_3">
+            <img id="image9" src="images/cheval_09.jpg" alt="cheval_9">
+            <img id="image2" src="images/cheval_02.jpg" alt="cheval_2">
+            <img id="image4" src="images/cheval_04.jpg" alt="cheval_4">
+            <img id="image7" src="images/cheval_07.jpg" alt="cheval_7">
+            <img id="image5" src="images/cheval_05.jpg" alt="cheval_5">
+            <img id="image8" src="images/cheval_08.jpg" alt="cheval_8">
+
+        </div>
+    </div>
+    
+    <div class="d-flex flex-wrap justify-content-md-between" style="border: 1px solid red; height: 80vh;">
+        <h4>Droppable()</h4>
+            <div class="w-100"></div>
+            <div id="joueur" >
+                <img id="pierre" src="images/pierre.jpg" alt="Pierre">
+                <img id="ciseaux" src="images/ciseaux.jpg" alt="Ciseaux">
+                <img id="feuille" src="images/feuille.jpg" alt="Feuille">
+
+            </div>
+            <div id="adversaire"  >
+                <img id="img_adv" src="images/ciseaux.jpg" alt="Ciseaux">
+
+            </div>
+
+    </div>
+
+    <h4>Resizable</h4>
+        <div class="" id="parent" style="height: 50vh;">
+            <div id="resizable" >
+                <h5>Redimensionnez-moi !</h5>
+            </div>
+        </div>
+   
+    <h4>Selectable</h4>
+    <p></p>
+    <ol id="selectable">
+        <li>Element 1 </li>
+        <li>Element 2 </li>
+        <li>Element 3 </li>
+        <li>Element 4 </li>
+    </ol>
+    <hr>
+
+
+    <h4>Date picker</h4>
+    <!-- le date picker vient en remplacement du
+    <input type="date"> 
+    tant que tous les navigateurs nepermettentpas son utilisation -->
+    <label for="">Mon date picker</label>
+    <input type="text"  id="input" placeholder="Choisissez une date">
+    <hr>
+    <h4>Autocomplete</h4>
+    <input type="text" name="" id="autocomplete">
+            
+
+       
       
         
   </main>
@@ -160,7 +249,7 @@
     
     <!-- script jquery  -->
     <script src="../sources/jquery-3.4.1.js"></script>
-    <!-- lien vers le script de jquery-ui-->
+    <!-- lien vers le script de jquery-ui -->
     <script src="jquery-ui.js"></script>
     <script>
         $(function(){
@@ -276,6 +365,50 @@
                 }
              
             }
+        });
+
+        //RESIZABLE
+
+        $( function() {
+            $( "#resizable" ).resizable({
+                animate : true,
+                containment : "#parent",
+                helper: "monhelper",
+                minHeight: 250,
+                minWidth: 250,
+                aspectRatio: 1/1
+            });
+        });
+
+        //selectable
+        $(function(){
+            $('#selectable').selectable({
+                stop : function(){
+                    // alert('selection effectuer');
+                    // console.log($('.ui-selected').text());
+                    $('#selectable').prev().text( 'Elément(s) selectionné(s): ' + ($('.ui-selected').text()) + ' ')
+
+                }
+            });
+        });
+
+        //Datepicker
+        $('#input').datepicker({
+            monthNames: [ "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" ],
+            dayNames: [ "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" ],
+            dayNamesMin: [ "Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa" ],
+            // dayNamesShort: [ "Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam" ]
+            dateFormat: "dd-mm-yy",
+            firstDay: 1,
+            showButtonPanel : true
+        });
+
+        //Autocomplete
+
+        var mesTags = ["Paris", "Nantes","Lyon","Nice","lille"];
+        $('#autocomplete').autocomplete({
+            source: mesTags
+
         });
 
 
