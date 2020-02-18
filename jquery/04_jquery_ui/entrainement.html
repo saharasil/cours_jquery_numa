@@ -37,6 +37,14 @@
                 background: tomato;
                 border: 1px solid tomato;
             }
+            .col-8{
+                border: 1px solid red; 
+                height: 120vh; 
+            }
+            .col-md-10 {
+                height: 150vh
+
+            }
     </style>
   </head>
   <body>
@@ -65,12 +73,12 @@
         
         <h4 id="ajoutClasse">Ajout de classe Jquery-ui</h4>
         <div class="row">
-            <div class="col-6 col-md-6 blue">
+            <div class="col-6 col-md-8 ">
                   <div class="animation">  
                       voici le contenu de ma div à animer
                     </div>
             </div>
-            <div class="col-6 col-md-6 blue">
+            <div class="col-6 col-md-4 ">
                 <div class="effets mb-2">test</div>
                 <button id="bout_effets"> Click pour l'efffet</button>
             </div>
@@ -98,7 +106,7 @@
                   </div>
             </div>
            <div class="row mt-5">
-                <div class="col-8" style= "border: 1px solid red; height: 100vh; ">
+                <div class="col-8 col-md-10" >
                     <img id="image1" src="images/cheval_01.jpg" alt="cheval_1">
                     <img id="image6" src="images/cheval_06.jpg" alt="cheval_6">
                     <img id="image3" src="images/cheval_03.jpg" alt="cheval_3">
@@ -110,12 +118,8 @@
                     <img id="image8" src="images/cheval_08.jpg" alt="cheval_8">
     
                 </div>
+               
            </div>
-
-      
-        
-  </main>
-
 
 
 
@@ -196,9 +200,12 @@
         $('#image1').draggable({snap: "#image2, #image4", snapmode:'outer' });
         $('#image2').draggable({snap: "#image1, #image3, #image5", snapmode:'outer'});
         $('#image3').draggable({snap: "#image2, #image6", snapmode : 'outer'});
-        $('#image4').draggable({snap : "#image1, #image5, #image7", snapmode:'outer'});
+        $('#image4').draggable({snap: "#image1, #image5, #image7", snapmode:'outer'});
         $('#image5').draggable({snap: "#image2, #image4, #image6, #image8", snapmode: 'outer'});
         $('#image6').draggable({snap: "#image3, #image5, #image9",snapmode:'outer' });
+        $('#image7').draggable({snap: "#image4, #image8", snapmode:'outer' });
+        $('#image8').draggable({snap: "#image5, #image7, #image9", snapmode: 'outer'});
+        $('#image9').draggable({snap: "#image6, #image8",snapmode:'outer'});
 
     // changer le curseur : mousedown bouton de souris cliqué, mouseup bouton de souris relacher 
 
@@ -209,6 +216,8 @@
             $(this).css("cursor","grab");
         });
 
+
+        // $('.flexslider').flexslider();
 
 
 
