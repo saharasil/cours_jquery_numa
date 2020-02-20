@@ -1948,6 +1948,7 @@ color.hook = function( hook ) {
 				}
 			}
 		};
+		
 		jQuery.fx.step[ hook ] = function( fx ) {
 			if ( !fx.colorInit ) {
 				fx.start = color( fx.elem, hook );
